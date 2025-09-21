@@ -4,7 +4,7 @@ export const SITE_CONFIG: SiteConfig = {
   title: "Hrishikesh Karande",
   author: "Hrishikesh Karande",
   description:
-    "Software Engineer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
+    "Passionate young Embedded Engineer based in Siegen, Germany.",
   lang: "en",
   siteLogo: "/photo.jpeg",
   navLinks: [
@@ -16,9 +16,10 @@ export const SITE_CONFIG: SiteConfig = {
   socialLinks: [
     { text: "LinkedIn", href: "https://www.linkedin.com/in/hrishikeshkarande/" },
     { text: "Github", href: "https://github.com/hrishikeshkarande" },
+    { text: "Dev.to", href: "https://dev.to/hrishikesh_karande" },
     { text: "Email", href: "mailto:hrishiekshkarande1997@email.com" },
   ],
-  socialImage: "/zen-og.png",
+  socialImage: "/photo.png",
   canonicalURL: "https://hrishikeshkarande.github.io/",
 };
 
