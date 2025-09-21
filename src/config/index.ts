@@ -19,7 +19,7 @@ export const SITE_CONFIG: SiteConfig = {
     { text: "Email", href: "mailto:hrishiekshkarande1997@email.com" },
   ],
   socialImage: "/zen-og.png",
-  canonicalURL: "https://astro-zen.vercel.app",
+  canonicalURL: "https://hrishikeshkarande.github.io/",
 };
 
 export const SITE_CONTENT: SiteContent = {
