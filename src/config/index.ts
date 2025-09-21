@@ -19,7 +19,7 @@ export const SITE_CONFIG: SiteConfig = {
     { text: "Dev.to", href: "https://dev.to/hrishikesh_karande" },
     { text: "Email", href: "mailto:hrishiekshkarande1997@email.com" },
   ],
-  socialImage: "/photo.png",
+  socialImage: "/photo.jpeg",
   canonicalURL: "https://hrishikeshkarande.github.io/",
 };
 
