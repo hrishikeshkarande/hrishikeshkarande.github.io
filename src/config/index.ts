@@ -28,12 +28,13 @@ export const SITE_CONTENT: SiteContent = {
     name: "Hrishikesh Karande",
     specialty: "Embedded Systems Engineer",
     summary:
-      "Hi there, I'm a post-graduate young engineer currently based in Siegen, Germany. My interest spans Microcontrollers (ARM Cortex M, ESP32, STM32, AVR-Atmel, RISC-V), FPGA, PCB design (KiCad, Altium), and embedded firmware development in C/C++, Python, and Rust.",
+      "Hi there! I'm a post-graduate young engineer currently based in Siegen, Germany. My interest spans Microcontrollers (ARM Cortex M, ESP32, STM32, AVR-Atmel, RISC-V), FPGA, PCB design (KiCad, Altium), and embedded firmware development in C/C++, Python, and Rust.",
     email: "hrishiekshkarande1997@email.com",
   },
   experience: [
     {
       company: "Infineon Technologies AG, Munich",
+      companyUrl: "https://www.infineon.com/",
       position: "Embedded Software Developer - Intern",
       startDate: "Dec 2024",
       endDate: "Mar 2025",
@@ -47,6 +48,7 @@ export const SITE_CONTENT: SiteContent = {
     },
     {
       company: "elab - Uni Siegen, Germany",
+      companyUrl: "https://elab-siegen.de/",
       position: "Wissenschaftliche Hilfskraft mit Bachelor-Abschluss",
       startDate: "July 2024",
       endDate: "Mar 2025",
@@ -60,6 +62,7 @@ export const SITE_CONTENT: SiteContent = {
     },
     {
       company: "Birlasoft, Pune",
+      companyUrl: "https://www.birlasoft.com/",
       position: "Software Developer in Test",
       startDate: "Dec 2020",
       endDate: "July 2022",
@@ -74,7 +77,7 @@ export const SITE_CONTENT: SiteContent = {
     {
       name: "Stair Vs Lift Detection using smartwatch",
       summary: "This project consist of a dataset collected using Bangle.js 2 Smart Watch. This collected data was used to train an ML model to detect stairs and lift usage.",
-      linkPreview: "/",
+      linkPreview: "https://link.springer.com/chapter/10.1007/978-3-031-80856-2_14",
       linkSource: "https://github.com/hrishikeshkarande/project_work_stairs_lift_detection",
       image: "/LiftVsStairs.png",
     },

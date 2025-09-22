@@ -17,15 +17,25 @@ const { projects } = Astro.props;
       return (
         <div
           style={`top: ${top}px;`}
-          class="sticky mb-12 rounded-2xl border border-neutral/20 bg-black"
+          class="mb-12 rounded-2xl border border-neutral/20 bg-black sm:sticky"
         >
-          <div class="bg-difu relative z-[1] grid h-[580px] w-full grid-rows-2 rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-[length:128px] before:bg-repeat before:opacity-[5%] before:content-[''] sm:grid-cols-2 sm:grid-rows-1 md:h-96">
+          <div class="bg-difu relative z-[1] grid h-auto min-h-[380px] w-full grid-rows-2 rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-[length:128px] before:bg-repeat before:opacity-[5%] before:content-[''] sm:grid-cols-2 sm:grid-rows-1 md:h-96">
             <div class="px-6 pt-12">
-              <h3 class="mb-5 font-serif text-3xl font-medium text-primary">
-                {name}
+              <h3 class="mb-3 font-serif text-2xl sm:text-3xl font-medium text-primary">
+                {linkPreview ? (
+                  <a
+                    href={linkPreview}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:underline after:relative after:bottom-[-5px] after:content-[url(/external.svg)]"
+                  >
+                    {name}
+                  </a>
+                ) : (
+                  name
+                )}
               </h3>
-              <p class="text-base text-neutral">{summary}</p>
-              <div class="flex gap-5 pt-10 text-white">
+              <div class="flex flex-col sm:flex-row gap-3 sm:gap-5 pb-3 text-white">
                 <a
                   href={linkSource}
                   target="_blank"
@@ -33,18 +43,12 @@ const { projects } = Astro.props;
                 >
                   Source
                 </a>
-                <a
-                  href={linkPreview}
-                  target="_blank"
-                  class="after:relative after:bottom-[-5px] after:content-[url(/external.svg)] hover:underline"
-                >
-                  Preview
-                </a>
               </div>
+              <p class="text-base text-neutral mb-4 sm:mb-0">{summary}</p>
             </div>
             <div class="flex items-end justify-end overflow-hidden">
               <Image
-                class="h-full w-full rounded-ss-xl rounded-ee-2xl object-cover object-center sm:h-[85%] sm:w-full"
+                class="h-40 w-full rounded-ss-xl rounded-ee-2xl object-cover object-center sm:h-[85%] sm:w-full"
                 src={image}
                 alt={name}
                 width="900"
