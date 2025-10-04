@@ -1,8 +1,14 @@
 ---
 import type { HeroProps } from "@types";
+import { SITE_CONFIG } from "@config";
 type Props = HeroProps;
 
 const { name, specialty, summary, email } = Astro.props;
+
+const linkedin = SITE_CONFIG.socialLinks.find((s) => s.text.toLowerCase().includes("linkedin"))?.href;
+const github = SITE_CONFIG.socialLinks.find((s) => s.text.toLowerCase().includes("github"))?.href;
+const devto = SITE_CONFIG.socialLinks.find((s) => s.text.toLowerCase().includes("dev"))?.href;
+const mail = SITE_CONFIG.socialLinks.find((s) => s.text.toLowerCase().includes("email"))?.href;
 ---
 
 <section class="py-24 md:py-32" id="#hero">
@@ -34,9 +40,32 @@ const { name, specialty, summary, email } = Astro.props;
             href="/cv.pdf" download target="_blank" rel="noopener noreferrer"
           >Download CV</a>
         </div>
-        <p class="mb-16 text-base font-normal text-neutral md:text-lg">
+        <p class="mb-6 text-base font-normal text-neutral md:text-lg">
           {summary}
         </p>
+
+        <div class="flex flex-wrap items-center gap-3">
+          {linkedin ? (
+            <a href={linkedin} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border border-neutral/20 px-3 py-2 text-sm text-white hover:bg-white/5">
+              LinkedIn
+            </a>
+          ) : null}
+          {github ? (
+            <a href={github} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border border-neutral/20 px-3 py-2 text-sm text-white hover:bg-white/5">
+              GitHub
+            </a>
+          ) : null}
+          {devto ? (
+            <a href={devto} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border border-neutral/20 px-3 py-2 text-sm text-white hover:bg-white/5">
+              Blog
+            </a>
+          ) : null}
+          {mail ? (
+            <a href={mail} class="inline-flex items-center gap-2 rounded-full border border-neutral/20 px-3 py-2 text-sm text-white hover:bg-white/5">
+              Email
+            </a>
+          ) : null}
+        </div>
       </div>
     </div>
   </div>
