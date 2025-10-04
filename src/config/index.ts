@@ -4,7 +4,7 @@ export const SITE_CONFIG: SiteConfig = {
   title: "Hrishikesh Karande",
   author: "Hrishikesh Karande",
   description:
-    "Passionate young Embedded Engineer based in Siegen, Germany.",
+    "Hrishikesh Karande - Passionate Embedded Systems Engineer",
   lang: "en",
   siteLogo: "/photo.jpeg",
   navLinks: [
@@ -28,7 +28,7 @@ export const SITE_CONTENT: SiteContent = {
     name: "Hrishikesh Karande",
     specialty: "Embedded Systems Engineer",
     summary:
-      "Hi there! I'm a post-graduate young engineer currently based in Siegen, Germany. My interest spans Microcontrollers (ARM Cortex M, ESP32, STM32, AVR-Atmel, RISC-V), FPGA, PCB design (KiCad, Altium), and embedded firmware development in C/C++, Python, and Rust.",
+      "Hi there! I'm a dynamic Embedded Systems post-graduate engineer. My interest spans Microcontrollers (ARM Cortex M, ESP32, STM32, AVR-Atmel, RISC-V), FPGA, PCB design (KiCad, Altium), and embedded firmware development in C/C++, Python, and Rust.",
     email: "hrishiekshkarande1997@email.com",
   },
   experience: [

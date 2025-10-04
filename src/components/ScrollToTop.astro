@@ -1,0 +1,52 @@
+---
+// Simple scroll-to-top button for Astro
+const showButton = typeof window !== 'undefined' ? window.scrollY > 200 : false;
+---
+<style>
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100;
+  background: var(--color-primary, #2563eb);
+  color: #fff;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.75rem 1.25rem;
+  font-size: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.scroll-to-top-btn:hover {
+  opacity: 1;
+}
+</style>
+<button
+  class="scroll-to-top-btn"
+  id="scrollToTopBtn"
+  aria-label="Scroll to top"
+  style="display:none;"
+>
+  ↑
+</button>
+<script>
+  // Show/hide button on scroll
+  window.addEventListener('scroll', () => {
+    const btn = document.getElementById('scrollToTopBtn');
+    if (!btn) return;
+    if (window.scrollY > 200) {
+      btn.style.display = 'block';
+    } else {
+      btn.style.display = 'none';
+    }
+  });
+  // Scroll to top on click
+  const btn = document.getElementById('scrollToTopBtn');
+  if (btn) {
+    btn.onclick = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  }
+</script>
