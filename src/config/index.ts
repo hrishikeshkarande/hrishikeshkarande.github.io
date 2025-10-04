@@ -98,13 +98,13 @@ export const SITE_CONTENT: SiteContent = {
   ],
   about: {
     description: `
-      Hello! I’m Hrishikesh Karande, an Embedded Systems Engineer with a passion for designing high-performance solutions at the intersection of hardware and software. 
+      Hello! 
+      \n\n
+      I’m Hrishikesh Karande, an Embedded Systems Engineer with a passion for designing high-performance solutions at the intersection of hardware and software. 
 
       Skilled in C/C++, device driver development, and industrial communication protocols (I2C, SPI, UART, CAN, Ethernet). Experienced with STM32, RISC-V, ARM Cortex MCUs, and debugging tools such as oscilloscopes, JTAG and SWD debuggers, and emulators.
-      
-      Beyond engineering, I enjoy learning German (currently B1), playing chess, and hiking. 
-
-      Let’s connect if you share a passion for embedded systems, hardware hacking, or just want to chat about tech!
+      \n\n
+      Beyond engineering, I enjoy learning German (currently B1), playing chess, and hiking. Let’s connect if you share a passion for embedded systems, hardware hacking, or just want to chat about tech!
 
     `,
     image: "/photo.jpeg",

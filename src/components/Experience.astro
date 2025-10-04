@@ -12,8 +12,8 @@ const { experience } = Astro.props;
 <Section text="Work Experience" href="experience">
   {
     experience.map(({ company, companyUrl, position, startDate, endDate, summary }) => (
-      <div class="mb-10">
-        <h3 class="mb-1.5 font-serif text-2xl font-semibold text-white">
+  <div class="mb-10 rounded-2xl border border-neutral/20 bg-[#1c232d]/85 p-6">
+  <h3 class="mb-1.5 font-serif text-3xl font-semibold text-white">
           {companyUrl ? (
             <a href={companyUrl} target="_blank" rel="noopener noreferrer" class="text-primary hover:underline after:relative after:bottom-[-3px] after:content-[url(/external.svg)]">{company}</a>
           ) : (
@@ -21,10 +21,10 @@ const { experience } = Astro.props;
           )}
         </h3>
         <div class="flex flex-col items-start pb-5">
-          <h4 class="mb-0.5 font-serif text-2xl font-medium text-primary">
+          <h4 class="mb-0.5 font-serif text-xl font-medium text-white">
             {position}
           </h4>
-          <span class="pb-[2px] text-sm text-white/70">
+            <span class="pb-[2px] text-xs text-white/70 mt-3 block">
             {startDate} — {endDate}
           </span>
         </div>
