@@ -46,7 +46,7 @@ const { projects } = Astro.props;
               </div>
               <p class="text-base text-neutral mb-4 sm:mb-0">{summary}</p>
             </div>
-            <div class="flex items-end justify-end overflow-hidden">
+            <div class="flex items-center justify-center overflow-hidden sm:items-end sm:justify-end">
               {linkPreview ? (
                 <a
                   href={linkPreview}
@@ -55,7 +55,7 @@ const { projects } = Astro.props;
                   aria-label={`Open preview for ${name}`}
                 >
                   <Image
-                    class="h-40 w-full rounded-ss-xl rounded-ee-2xl object-cover object-center sm:h-[85%] sm:w-full hover:opacity-80 transition-opacity"
+                    class="h-56 w-full rounded-ss-xl rounded-ee-2xl object-cover object-center sm:h-[85%] sm:w-full hover:opacity-80 transition-opacity mx-auto"
                     src={image}
                     alt={name}
                     width="900"
@@ -64,7 +64,7 @@ const { projects } = Astro.props;
                 </a>
               ) : (
                 <Image
-                  class="h-40 w-full rounded-ss-xl rounded-ee-2xl object-cover object-center sm:h-[85%] sm:w-full"
+                  class="h-56 w-full rounded-ss-xl rounded-ee-2xl object-cover object-center sm:h-[85%] sm:w-full mx-auto"
                   src={image}
                   alt={name}
                   width="900"
