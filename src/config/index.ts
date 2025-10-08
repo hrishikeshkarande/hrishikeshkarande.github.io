@@ -80,13 +80,16 @@ export const SITE_CONTENT: SiteContent = {
       linkPreview: "https://link.springer.com/chapter/10.1007/978-3-031-80856-2_14",
       linkSource: "https://github.com/hrishikeshkarande/project_work_stairs_lift_detection",
       image: "/LiftVsStairs.png",
+      video: "https://drive.google.com/file/d/1EaXa6-X_P9QcKU-nyXUW4slnDkbJl_fI/view?usp=sharing",
     },
     {
-      name: "XY Plotter",
-      summary: "Developed an XY axis plotter using multiple-precision motors, integrated with Arduino and CNC platforms. Tested the device under multiple conditions.",
+      name: "Autowriter / XY Plotter",
+      summary: " Designed, built, and pitched- ’AUTOWRITER’ a product which helps the differently-abled to write on paper with a pen/pencil using voice commands.",
       linkPreview: "https://www.linkedin.com/in/hrishikeshkarande/details/projects/759751119/multiple-media-viewer/?profileId=ACoAACujZsgBxtcgr3wyppEjRjwTFvG9a3vjDHE&treasuryMediaId=1742828892122",
-      linkSource: "https://www.linkedin.com/in/hrishikeshkarande/details/projects/759751119/multiple-media-viewer/?profileId=ACoAACujZsgBxtcgr3wyppEjRjwTFvG9a3vjDHE&treasuryMediaId=1742828892122",
+      linkSource: "https://www.linkedin.com/in/hrishikeshkarande/details/projects/759846775/multiple-media-viewer/?profileId=ACoAACujZsgBxtcgr3wyppEjRjwTFvG9a3vjDHE&treasuryMediaId=1742829420944",
       image: "/Plotter.png",
+      video: "https://drive.google.com/file/d/10C3eCv8yZLG8Sd-d77cxJQKUPCgndjHN/view?usp=sharing",
+
     },
     {
       name: "Luminosense - NILM",
@@ -94,6 +97,7 @@ export const SITE_CONTENT: SiteContent = {
       linkPreview: "https://www.linkedin.com/in/hrishikeshkarande/details/projects/759681027/multiple-media-viewer/?profileId=ACoAACujZsgBxtcgr3wyppEjRjwTFvG9a3vjDHE&treasuryMediaId=1742829171876",
       linkSource: "https://www.linkedin.com/in/hrishikeshkarande/details/projects/759681027/multiple-media-viewer/?profileId=ACoAACujZsgBxtcgr3wyppEjRjwTFvG9a3vjDHE&treasuryMediaId=1742829171876",
       image: "/Lumino.png",
+      video: "https://drive.google.com/file/d/1ECfJFFzxizLJ-MKQAL1Vx6n8VpMy2owg/view?usp=sharing",
     },
   ],
   about: {

@@ -12,8 +12,13 @@ const { projects } = Astro.props;
 
 <Section text="Featured Projects" href="projects">
   {
-    projects.map(({ name, summary, image, linkPreview, linkSource }, index) => {
+    projects.map(({ name, summary, image, video, linkPreview, linkSource }, index) => {
       const top = 98 + index * 40;
+      // detect Google Drive links and extract file id when present
+      const isDrive = video && /drive\.google\.com|docs\.google\.com/.test(video);
+      const driveId = isDrive
+        ? (video.match(/\/d\/([a-zA-Z0-9_-]+)/)?.[1] || video.match(/[?&]id=([a-zA-Z0-9_-]+)/)?.[1])
+        : null;
       return (
         <div
           style={`top: ${top}px;`}
@@ -47,7 +52,37 @@ const { projects } = Astro.props;
               <p class="text-base text-neutral mb-4 sm:mb-0">{summary}</p>
             </div>
             <div class="flex items-center justify-center overflow-hidden sm:items-end sm:justify-end">
-              {linkPreview ? (
+              {video ? (
+                driveId ? (
+                  <div
+                    class="h-56 w-full rounded-ss-xl rounded-ee-2xl overflow-hidden bg-neutral-800 sm:h-[85%] sm:w-full mx-auto relative bg-cover bg-center"
+                    style={`background-image: url(${image});`}
+                    data-drive-id={driveId}
+                    data-name={name}
+                  >
+                    <button
+                      type="button"
+                      aria-label={`Play ${name}`}
+                      class="absolute inset-0 m-auto z-10 flex h-14 w-14 items-center justify-center rounded-full bg-black/60 text-white"
+                      data-action="play-drive"
+                    >
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M8 5v14l11-7L8 5z" fill="currentColor" />
+                      </svg>
+                    </button>
+                  </div>
+                ) : (
+                  <video
+                    class="h-56 w-full rounded-ss-xl rounded-ee-2xl object-cover object-center sm:h-[85%] sm:w-full mx-auto"
+                    src={video}
+                    poster={image}
+                    controls
+                    playsinline
+                    muted
+                    loop
+                  />
+                )
+              ) : linkPreview ? (
                 <a
                   href={linkPreview}
                   target="_blank"
@@ -78,3 +113,30 @@ const { projects } = Astro.props;
     })
   }
 </Section>
+
+<script>
+  // Replace Drive poster div with iframe when play button clicked
+  document.addEventListener('click', (e) => {
+    const target = e.target;
+    if (!(target instanceof Element)) return;
+    const btn = target.closest('[data-action="play-drive"]');
+    if (!btn) return;
+    const container = btn.closest('[data-drive-id]');
+    if (!container) return;
+    const driveId = container.getAttribute('data-drive-id');
+    const name = container.getAttribute('data-name') || 'video';
+    if (!driveId) return;
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://drive.google.com/file/d/${driveId}/preview`;
+    iframe.width = '100%';
+    iframe.height = '100%';
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('allow', 'autoplay; encrypted-media');
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.title = name;
+    iframe.className = 'w-full h-full';
+    // Clear container and append iframe
+    container.innerHTML = '';
+    container.appendChild(iframe);
+  });
+</script>
